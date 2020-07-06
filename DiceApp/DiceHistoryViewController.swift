@@ -93,10 +93,12 @@ extension DiceHistoryViewController: UITableViewDataSource {
         
         let realm = try! Realm()
         
+        //Delete the selected record
         try! realm.write{
             realm.delete(diceHistories[sender.tag])
         }
-        
+    
+        //Refresh the Table View
         self.diceHistoryTableView.reloadData()
     }
 }
