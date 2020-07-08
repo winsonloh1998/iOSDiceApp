@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XVC-bJ-PgJ">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,65 +12,98 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="RollDiceViewController" customModule="DiceApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="table" translatesAutoresizingMaskIntoConstraints="NO" id="Xu0-Gg-pag">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="APU-Eu-2cT">
-                                <rect key="frame" x="40" y="180" width="334" height="140"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="MwG-en-gZB">
+                                <rect key="frame" x="44" y="64" width="808" height="329"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dice1" translatesAutoresizingMaskIntoConstraints="NO" id="Roy-RU-nLZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="147" height="140"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dice5" translatesAutoresizingMaskIntoConstraints="NO" id="Ko6-Gb-UW7">
-                                        <rect key="frame" x="187" y="0.0" width="147" height="140"/>
-                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P7u-Dm-c58" userLabel="Top View">
+                                        <rect key="frame" x="0.0" y="0.0" width="808" height="109.66666666666667"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Xd0-3T-9Qs">
+                                                <rect key="frame" x="244" y="-15" width="320" height="140"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dice1" translatesAutoresizingMaskIntoConstraints="NO" id="Roy-RU-nLZ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="140" id="AsY-3S-hbf"/>
+                                                            <constraint firstAttribute="width" constant="140" id="auC-jb-KL2"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dice5" translatesAutoresizingMaskIntoConstraints="NO" id="Ko6-Gb-UW7">
+                                                        <rect key="frame" x="180" y="0.0" width="140" height="140"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="140" id="ohg-cf-dS7"/>
+                                                            <constraint firstAttribute="height" constant="140" id="qaa-0c-hZT"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Xd0-3T-9Qs" firstAttribute="centerY" secondItem="P7u-Dm-c58" secondAttribute="centerY" id="4df-Ic-goa"/>
+                                            <constraint firstItem="Xd0-3T-9Qs" firstAttribute="centerX" secondItem="P7u-Dm-c58" secondAttribute="centerX" id="fOY-sy-CQK"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VYu-B0-UdH" userLabel="Middle View">
+                                        <rect key="frame" x="0.0" y="109.66666666666666" width="808" height="109.66666666666666"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fYU-vH-fbh">
+                                                <rect key="frame" x="357" y="30" width="94" height="42"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                                <state key="normal" title="Roll Dice">
+                                                    <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="rollDice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tqR-Hw-WzM"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="fYU-vH-fbh" firstAttribute="top" secondItem="VYu-B0-UdH" secondAttribute="top" constant="30" id="I2t-ZM-ArM"/>
+                                            <constraint firstItem="fYU-vH-fbh" firstAttribute="centerX" secondItem="VYu-B0-UdH" secondAttribute="centerX" id="lr1-EF-CgM"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kbP-Pc-hy6" userLabel="Bottom View">
+                                        <rect key="frame" x="0.0" y="219.33333333333329" width="808" height="109.66666666666666"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uTJ-fQ-OZo">
+                                                <rect key="frame" x="347" y="34" width="114" height="42"/>
+                                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                <inset key="contentEdgeInsets" minX="5" minY="10" maxX="5" maxY="10"/>
+                                                <state key="normal" title="Dice History">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="q9y-KY-HIx" kind="show" id="IXo-tG-09I"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="uTJ-fQ-OZo" firstAttribute="centerY" secondItem="kbP-Pc-hy6" secondAttribute="centerY" id="JiV-4T-vmp"/>
+                                            <constraint firstItem="uTJ-fQ-OZo" firstAttribute="centerX" secondItem="kbP-Pc-hy6" secondAttribute="centerX" id="kf1-vE-1i2"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="140" id="OLR-ET-m53"/>
-                                </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fYU-vH-fbh">
-                                <rect key="frame" x="160" y="400" width="94" height="42"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                <state key="normal" title="Roll Dice">
-                                    <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="rollDice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tqR-Hw-WzM"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uTJ-fQ-OZo">
-                                <rect key="frame" x="70" y="770" width="274" height="42"/>
-                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                <inset key="contentEdgeInsets" minX="5" minY="10" maxX="5" maxY="10"/>
-                                <state key="normal" title="Dice History">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="q9y-KY-HIx" kind="show" id="IXo-tG-09I"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="uTJ-fQ-OZo" secondAttribute="bottom" constant="50" id="0N7-MC-8Ju"/>
-                            <constraint firstItem="APU-Eu-2cT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="5W6-5b-yTA"/>
                             <constraint firstItem="Xu0-Gg-pag" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="91d-K0-Ogv"/>
-                            <constraint firstItem="uTJ-fQ-OZo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="B4M-ZU-UYv"/>
-                            <constraint firstItem="fYU-vH-fbh" firstAttribute="top" secondItem="APU-Eu-2cT" secondAttribute="bottom" constant="80" id="HyP-bF-BBx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MwG-en-gZB" secondAttribute="trailing" id="IrK-bO-3em"/>
                             <constraint firstItem="Xu0-Gg-pag" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="JF0-qs-hm3"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="APU-Eu-2cT" secondAttribute="trailing" constant="40" id="TlV-PL-FV2"/>
                             <constraint firstAttribute="trailing" secondItem="Xu0-Gg-pag" secondAttribute="trailing" id="WOR-UO-9Gi"/>
+                            <constraint firstItem="MwG-en-gZB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Y7s-lc-ahP"/>
                             <constraint firstAttribute="bottom" secondItem="Xu0-Gg-pag" secondAttribute="bottom" id="en6-Jh-3cu"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="uTJ-fQ-OZo" secondAttribute="trailing" constant="50" id="faN-z6-cbz"/>
-                            <constraint firstItem="fYU-vH-fbh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iTC-nQ-Qjg"/>
-                            <constraint firstItem="APU-Eu-2cT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="m4y-Xe-0DI"/>
+                            <constraint firstItem="MwG-en-gZB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="gPV-ro-T3F"/>
+                            <constraint firstItem="MwG-en-gZB" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="h9P-VY-mvn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -93,21 +126,21 @@
             <objects>
                 <viewController id="q9y-KY-HIx" customClass="DiceHistoryViewController" customModule="DiceApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yE9-Pi-D6Y">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="table" translatesAutoresizingMaskIntoConstraints="NO" id="vtz-xT-dLt">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ope-JL-1a7">
-                                <rect key="frame" x="10" y="140" width="394" height="722"/>
+                                <rect key="frame" x="54" y="44" width="788" height="349"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DiceRolledRecords" id="czx-Dm-LDl" customClass="DiceHistoryTableViewCell" customModule="DiceApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="394" height="100.33333587646484"/>
+                                        <rect key="frame" x="0.0" y="28" width="788" height="100.33333587646484"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="czx-Dm-LDl" id="ZoD-Tu-RPb">
-                                            <rect key="frame" x="0.0" y="0.0" width="394" height="100.33333587646484"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="788" height="100.33333587646484"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Njy-Om-CTB">
@@ -132,13 +165,13 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="PZp-5O-Q7f">
                                                     <rect key="frame" x="188" y="29" width="35.333333333333343" height="42"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jce-eB-wnQ">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jce-eB-wnQ">
                                                             <rect key="frame" x="0.0" y="0.0" width="35.333333333333336" height="17"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Glb-8H-Ebr">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Glb-8H-Ebr">
                                                             <rect key="frame" x="0.0" y="25" width="35.333333333333336" height="17"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <nil key="textColor"/>
@@ -204,7 +237,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XVC-bJ-PgJ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="dcA-HB-ni8">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="largeTitleTextAttributes">
